@@ -4,10 +4,10 @@ connect_twittR_api <- function() {
   
   library(twitteR)
   
-  consumer_key <- "BlVcLSJaMPIq72IN8oQPig9qR"
-  consumer_secret <- "LHoITtaFPu80eF2ppG14ElqEnXNVbH0wMz3THzQHSqh9HDETiw"
-  access_token <-  "926479201414385668-gtFFvJNriVbsHbPwBLXJjGWuIbY8Oz3"
-  access_secret <-  "ozUPCDKpiw4eWhJcNOE7rh7c7a4KmcNXQGwKTYjMhCiQv"
+  consumer_key <- "Qgzz3HsGh8Ea5RnIkokoo9TjF"
+  consumer_secret <- "zx7X0mP0K3sjpI2gZf3afokSmrPJ79oI8650abhEdDMHSCfLdg"
+  access_token <-  "926479201414385668-GIpDcplzHxMxt0lP9TbXbv43e3O6bpK"
+  access_secret <-  "STofoN1UtqpGy1zvtiJ5SMB5129FNRwgzwwJHvDSwnuUP"
   
   setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)
   
@@ -41,8 +41,9 @@ create_sentiment <- function(a_dataframe){
     
     score = sum(positive_matches) - sum(negative_matches)
     sentiment<-c(sentiment,score)
-  }
-  
+
+    }
+}
   
   #This fetches the longitude and latitude value based on a list of cities
   
@@ -60,7 +61,7 @@ create_sentiment <- function(a_dataframe){
     df_total_US <- data.frame(state = character(), lon = character(), lat = character())
     
     countries <- as.character(countries$Countries)
-    states <- as.character(states$states)
+    states <- as.character(states$States)
     
     for(state in states){
       df_temp <- google_geocode(address = state, key = my_api_key)
